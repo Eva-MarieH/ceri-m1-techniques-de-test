@@ -1,0 +1,17 @@
+version: 2.1
+# Define the jobs we want to run for this project
+jobs:
+	only:
+		- master
+
+machine:
+ 	java:
+    	version: oraclejdk8
+
+orbs:
+  	maven: circleci/maven@x.y
+
+workflows:
+  	maven_test:
+    	jobs:
+      		- maven/test
