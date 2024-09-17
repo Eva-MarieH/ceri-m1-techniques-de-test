@@ -5,13 +5,13 @@ jobs:
 		- master
 
 machine:
- 	java:
-    	version: oraclejdk8
+	java:
+		version: oraclejdk8
 
 orbs:
-  	maven: circleci/maven@x.y
+	maven: circleci/maven@x.y
 
 workflows:
-  	maven_test:
-    	jobs:
-      		- maven/test
+	maven_test:
+		jobs:
+			- maven/test
