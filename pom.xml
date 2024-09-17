@@ -13,19 +13,32 @@
   <build>
 	   <plugins>
 		    <plugin>
-			      <groupId>org.apache.maven.plugins</groupId>
-			      <artifactId>maven-compiler-plugin</artifactId>
-			      <version>3.6.1</version>
-			      <executions>
-						<execution>
-							<phase>package</phase>
-						</execution>
-				  </executions>
-			      <configuration>
-				        <source>1.8</source>
-				        <target>1.8</target>
-			      </configuration>
+		        <groupId>org.apache.maven.plugins</groupId>
+		        <artifactId>maven-compiler-plugin</artifactId>
+		        <version>3.6.1</version>
+		        <executions>
+					  <execution>
+						  <phase>package</phase>
+					  </execution>
+			    </executions>
+		        <configuration>
+			          <source>1.8</source>
+			          <target>1.8</target>
+		        </configuration>
 		    </plugin>
+		    <plugin>
+		        <artifactId>maven-clean-plugin</artifactId>
+		        <version>3.4.0</version>
+		        <executions>
+			          <execution>
+			            <id>auto-clean</id>
+			            <phase>initialize</phase>
+			            <goals>
+			              <goal>clean</goal>
+			            </goals>
+			          </execution>
+		        </executions>
+	      </plugin>
 	   </plugins>
   </build>
 
