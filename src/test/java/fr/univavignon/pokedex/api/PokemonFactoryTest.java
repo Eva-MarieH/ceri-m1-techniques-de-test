@@ -1,8 +1,7 @@
 package fr.univavignon.pokedex.api;
 
-public class PokemonFactoryTest implements IPokemonFactoryTest {
+public class PokemonFactoryTest{
 
-	@Override
 	public void testCreatePokemon() {
 		
 	}

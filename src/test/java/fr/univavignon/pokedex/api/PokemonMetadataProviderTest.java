@@ -1,9 +1,11 @@
 package fr.univavignon.pokedex.api;
 
-public class PokemonMetadataProviderTest implements IPokemonMetadataProviderTest {
+import org.mockito.Mockito;
 
-	@Override
+public class PokemonMetadataProviderTest{
+
 	public void testGetPokemonMetadata(int index) {
+		IPokemonMetadataProviderTest test = Mockito.mock(IPokemonMetadataProviderTest.class)
 		assert(index >= 0 && index <= 150);
 	}
 
