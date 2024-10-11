@@ -60,5 +60,12 @@
 		<version>3.12.4</version>
 	</dependency>
   </dependencies>  
+  <repositories>
+    <repository>
+      <id>repo_test</id>
+      <name>Test</name>
+      <url>src/test/java</url>
+    </repository>
+  </repositories>
   
 </project>  
