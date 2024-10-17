@@ -10,7 +10,7 @@ jobs:
     steps:
       - checkout
       - run: echo "Build job"
-	  - run: mvn clean install
+      - run: mvn clean install
 
   test:
     docker:
