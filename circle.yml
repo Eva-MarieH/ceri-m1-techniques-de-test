@@ -17,6 +17,7 @@ jobs:
     steps:
       - checkout
       - maven/test
+	  - run: mvn test
 
 workflows:
   maven_test:
