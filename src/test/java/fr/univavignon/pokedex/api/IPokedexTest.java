@@ -20,20 +20,10 @@ public class IPokedexTest {
 	}
 	
 	@Test
-	public void testSize() {
+	public void testPokedex() {
 		int size = this.ipokedex.size();
 		assert(size >= 0 && size <= 151);
+		
 	}
 	
-	@Test
-	public void testAddPokemon() {
-	}
-	
-	@Test
-	public void testGetPokemon() {
-	}
-	
-	@Test
-	public void testGetPokemons() {
-	}
 }
