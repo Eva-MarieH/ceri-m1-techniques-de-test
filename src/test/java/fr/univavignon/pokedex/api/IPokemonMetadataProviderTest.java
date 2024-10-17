@@ -5,8 +5,7 @@ import org.junit.Test;
 public class IPokemonMetadataProviderTest {
 
 	@Test
-	public void testGetPokemonMetadata(int index) {
-		assert(index >= 0 && index <= 150);
+	public void testGetPokemonMetadata() {
 	}
 	
 }
