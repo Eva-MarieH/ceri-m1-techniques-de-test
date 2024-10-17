@@ -1,20 +1,25 @@
 version: 2.1
-# Define the jobs we want to run for this project
-jobs:
-  build:
-    filters:
-      branches:
-        only:
-          - master
-
-machine:
-  java:
-    version: oraclejdk8
 
 orbs:
-  maven: circleci/maven@x.y
+  maven: circleci/maven@3.2.0
+
+jobs:
+  build:
+    docker:
+      - image: circleci/openjdk:8-jdk
+    steps:
+      - checkout
+      - run: echo "Build job"
+
+  test:
+    docker:
+      - image: circleci/openjdk:8-jdk
+    steps:
+      - checkout
+      - maven/test
 
 workflows:
   maven_test:
     jobs:
-      - maven/test
+      - build
+      - test
