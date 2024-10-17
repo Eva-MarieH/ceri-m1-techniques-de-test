@@ -2,9 +2,11 @@ package fr.univavignon.pokedex.api;
 
 import org.junit.jupiter.api.Test;
 
-public interface IPokemonMetadataProviderTest {
+public class IPokemonMetadataProviderTest {
 
 	@Test
-	public abstract void testGetPokemonMetadata(int index);
+	public void testGetPokemonMetadata(int index) {
+		assert(index >= 0 && index <= 150);
+	}
 	
 }

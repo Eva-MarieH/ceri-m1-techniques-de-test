@@ -1,18 +1,39 @@
 package fr.univavignon.pokedex.api;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 
-public interface IPokedexTest {
+
+public class IPokedexTest {
+	private IPokedex ipokedex;
+	
+	@Before
+	public void initTestEnvironment() {
+		this.ipokedex = Mockito.mock(IPokedex.class);
+	}
+	
+	@After
+	public void destroyTestEnvironment() {
+		
+	}
 	
 	@Test
-	public abstract void testSize();
+	public void testSize() {
+		int size = this.ipokedex.size();
+		assert(size >= 0 && size <= 151);
+	}
 	
 	@Test
-	public abstract void testAddPokemon();
+	public void testAddPokemon() {
+	}
 	
 	@Test
-	public abstract void testGetPokemon();
+	public void testGetPokemon() {
+	}
 	
 	@Test
-	public abstract void testGetPokemons();
+	public void testGetPokemons() {
+	}
 }

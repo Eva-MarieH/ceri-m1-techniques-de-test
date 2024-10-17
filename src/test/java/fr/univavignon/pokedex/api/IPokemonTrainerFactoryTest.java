@@ -2,9 +2,10 @@ package fr.univavignon.pokedex.api;
 
 import org.junit.jupiter.api.Test;
 
-public interface IPokemonTrainerFactoryTest {
+public class IPokemonTrainerFactoryTest {
 
 	@Test
-	public abstract void testCreateTrainer();
+	public void testCreateTrainer() {
+	}
 	
 }
