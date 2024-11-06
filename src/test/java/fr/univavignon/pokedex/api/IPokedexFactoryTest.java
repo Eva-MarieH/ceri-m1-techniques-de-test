@@ -31,7 +31,9 @@ public class IPokedexFactoryTest {
 		Pokemon pokemon1 = new Pokemon(0, "Bulbizarre", 126, 126, 90, 613, 64, 4000, 4, 56);
 		Pokemon pokemon2 = new Pokemon(1, "Pikachu", 126, 126, 90, 613, 64, 4000, 4, 56);
 		
-		ipokedex.addPokemon(pokemon1);
-		ipokedex.addPokemon(pokemon2);
+		if(pokemon1 != null && pokemon2 != null) {
+			ipokedex.addPokemon(pokemon1);
+			ipokedex.addPokemon(pokemon2);
+		}
 	}
 }

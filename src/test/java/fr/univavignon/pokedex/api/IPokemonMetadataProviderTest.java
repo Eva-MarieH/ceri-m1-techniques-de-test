@@ -23,7 +23,13 @@ public class IPokemonMetadataProviderTest {
 	
 	@Test
 	public void testPokemonMetadataProvider() {
-		PokemonMetadata metadata = new PokemonMetadata(133, "Aquali", 186, 168, 90);
+		Pokemon pokemon = new Pokemon(133, "Aquali", 186, 168, 90, 52, 56, 58, 40, 59);
+		PokemonMetadata metadata = null;
+		try {
+			metadata = this.ipokemonmetadataprovider.getPokemonMetadata(133);
+		} catch (PokedexException e) {
+			e.printStackTrace();
+		}
 		
 		if(metadata != null) {
 			Mockito.when(metadata.getIndex()).thenReturn(1);
