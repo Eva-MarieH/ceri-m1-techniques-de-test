@@ -23,7 +23,7 @@ public class IPokemonMetadataProviderTest {
 	
 	@Test
 	public void testPokemonMetadataProvider() {
-		PokemonMetadata metadata = new PokemonMetadata(1, "Salamèche", 0, 0, 0);
+		PokemonMetadata metadata = new PokemonMetadata(133, "Aquali", 186, 168, 90);
 		
 		Mockito.when(metadata.getIndex()).thenReturn(1);
 		Mockito.when(metadata.getName()).thenReturn("Salamèche");

@@ -20,7 +20,13 @@ public class IPokemonFactoryTest {
 	
 	@Test
 	public void testPokemonFactory() {
+		Pokemon pokemon = this.ipokemonfactory.createPokemon(1, 3, 10, 20, 4);
 		
+		Mockito.when(pokemon.getIndex()).thenReturn(1);
+		Mockito.when(pokemon.getCp()).thenReturn(3);
+		Mockito.when(pokemon.getHp()).thenReturn(10);
+		Mockito.when(pokemon.getDust()).thenReturn(20);
+		Mockito.when(pokemon.getCandy()).thenReturn(4);
 	}
 	
 }
