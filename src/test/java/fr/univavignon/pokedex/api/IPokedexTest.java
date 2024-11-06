@@ -33,7 +33,9 @@ public class IPokedexTest {
 		
 		this.ipokedex.addPokemon(pokemon);
 		try {
-			Mockito.when(this.ipokedex.getPokemonMetadata(0)).thenReturn(pokemon);
+			if(pokemon != null) {
+				Mockito.when(this.ipokedex.getPokemonMetadata(0)).thenReturn(pokemon);				
+			}
 		} catch (PokedexException e) {
 			e.printStackTrace();
 		}

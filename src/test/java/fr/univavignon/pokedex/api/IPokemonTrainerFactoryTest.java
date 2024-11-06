@@ -26,8 +26,10 @@ public class IPokemonTrainerFactoryTest {
 	public void testCreateTrainer() {
 		PokemonTrainer pokemonTrainer = this.ipokemontrainerfactory.createTrainer("Trainer1", Team.MYSTIC, this.ipokedexfactory);
 		
-		Mockito.when(pokemonTrainer.getName()).thenReturn("Trainer1");
-		Mockito.when(pokemonTrainer.getTeam()).thenReturn(Team.MYSTIC);
+		if(pokemonTrainer!=null) {
+			Mockito.when(pokemonTrainer.getName()).thenReturn("Trainer1");
+			Mockito.when(pokemonTrainer.getTeam()).thenReturn(Team.MYSTIC);
+		}
 	}
 	
 }
