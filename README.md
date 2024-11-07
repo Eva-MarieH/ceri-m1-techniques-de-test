@@ -35,3 +35,10 @@ Pour chaque rendu vous devez créer un tag à partir du commit qui correspond à
 Si vous ne spécifiez pas de tag, le dernier commit à la date-heure de la fin de séance sera celui considéré.
 
 [^1]: Si vous n’êtes vraiment pas à l’aise avec cet outil nous vous conseillons quand même vivement de vous y mettre.
+
+## Numéros de commit pour les rendus : 
+
+- TP1 : bcfa57b6ed5bb443ada2dab028819af02ef8cae1
+- TP 2 : 9a067344428f3a7759cb96423720ce1256af0566
+
+J'ai mis les tags à partir du TP3.
