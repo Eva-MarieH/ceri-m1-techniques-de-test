@@ -19,13 +19,6 @@ jobs:
     steps:
       - checkout
       - run: mvn test
-
-  checkout:
-    steps:
-      - checkout
-
-  codecov/upload:
-    steps:
       - codecov/upload
 
 workflows:
@@ -33,7 +26,3 @@ workflows:
     jobs:
       - build
       - test
-  upload-to-codecov:
-    jobs:
-      - checkout
-      - codecov/upload
