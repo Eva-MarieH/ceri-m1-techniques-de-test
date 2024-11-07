@@ -1,5 +1,8 @@
 package fr.univavignon.pokedex.api;
 
+import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.when;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -20,15 +23,16 @@ public class IPokemonFactoryTest {
 	
 	@Test
 	public void testPokemonFactory() {
-		Pokemon pokemon = this.ipokemonfactory.createPokemon(1, 3, 10, 20, 4);
+		Pokemon pokemon = new Pokemon(133, "Aquali", 186, 168, 90, 52, 56, 58, 40, 59);
 		
-		if(pokemon != null) {
-			Mockito.when(pokemon.getIndex()).thenReturn(1);
-			Mockito.when(pokemon.getCp()).thenReturn(3);
-			Mockito.when(pokemon.getHp()).thenReturn(10);
-			Mockito.when(pokemon.getDust()).thenReturn(20);
-			Mockito.when(pokemon.getCandy()).thenReturn(4);
-		}
+		when(this.ipokemonfactory.createPokemon(133, 52, 56, 58, 40)).thenReturn(pokemon);
+		
+		assertEquals(pokemon.getIndex(),133);
+		assertEquals(pokemon.getCp(),52);
+		assertEquals(pokemon.getHp(),56);
+		assertEquals(pokemon.getDust(),58);
+		assertEquals(pokemon.getCandy(),40);
+		
 	}
 	
 }
