@@ -1,6 +1,7 @@
 package fr.univavignon.pokedex.api;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -30,14 +31,12 @@ public class IPokemonTrainerFactoryTest {
 	public void testCreateTrainer() {
 		PokemonTrainer pokemonTrainer = new PokemonTrainer("Trainer1", Team.MYSTIC, ipokedex);
 		
+		assertNotNull(pokemonTrainer);
 		assertEquals(pokemonTrainer.getName(),"Trainer1");
 		assertEquals(pokemonTrainer.getTeam(),Team.MYSTIC);
 		assertEquals(pokemonTrainer.getPokedex(),ipokedex);
 		
-		when(this.ipokemontrainerfactory.createTrainer("Trainer1", Team.MYSTIC, ipokedexfactory)).thenReturn(pokemonTrainer);
-		
-		
-		
+		when(this.ipokemontrainerfactory.createTrainer("Trainer1", Team.MYSTIC, ipokedexfactory)).thenReturn(pokemonTrainer);	
 	}
 	
 }

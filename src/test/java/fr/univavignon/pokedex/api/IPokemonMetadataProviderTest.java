@@ -1,5 +1,6 @@
 package fr.univavignon.pokedex.api;
 
+import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.when;
 
 import org.junit.After;
@@ -24,20 +25,19 @@ public class IPokemonMetadataProviderTest {
 	@Test
 	public void testPokemonMetadataProvider() {
 		Pokemon pokemon = new Pokemon(133, "Aquali", 186, 168, 90, 52, 56, 58, 40, 59);
-		PokemonMetadata metadata = null;
+		PokemonMetadata metadata = new PokemonMetadata(133, "Aquali", 186, 168, 90);
 		try {
-			metadata = this.ipokemonmetadataprovider.getPokemonMetadata(133);
+			when(this.ipokemonmetadataprovider.getPokemonMetadata(133)).thenReturn(metadata);
 		} catch (PokedexException e) {
 			e.printStackTrace();
+			e.getMessage();
 		}
 		
-		if(metadata != null) {
-			Mockito.when(metadata.getIndex()).thenReturn(1);
-			Mockito.when(metadata.getName()).thenReturn("Salamèche");
-			Mockito.when(metadata.getAttack()).thenReturn(0);
-			Mockito.when(metadata.getDefense()).thenReturn(0);
-			Mockito.when(metadata.getStamina()).thenReturn(0);
-		}
+		assertEquals(metadata.getIndex(),133);
+		assertEquals(metadata.getName(),"Aquali");
+		assertEquals(metadata.getAttack(),186);
+		assertEquals(metadata.getDefense(),168);
+		assertEquals(metadata.getStamina(),90);
 	}
 	
 }
