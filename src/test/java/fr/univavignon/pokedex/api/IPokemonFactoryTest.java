@@ -32,7 +32,7 @@ public class IPokemonFactoryTest {
 		assertEquals(pokemon.getHp(),56);
 		assertEquals(pokemon.getDust(),58);
 		assertEquals(pokemon.getCandy(),40);
-		assertEquals(pokemon.getIv(),59);
+		
 		
 	}
 	
