@@ -20,6 +20,14 @@ jobs:
       - checkout
       - run: mvn test
 
+  checkout:
+    steps:
+      - checkout
+
+  codecov/upload:
+    steps:
+      - codecov/upload
+
 workflows:
   maven_test:
     jobs:
