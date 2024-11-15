@@ -1,6 +1,7 @@
 package fr.univavignon.pokedex.api;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 import static org.mockito.Mockito.when;
 
 import org.junit.After;
@@ -32,6 +33,7 @@ public class IPokemonFactoryTest {
 		assertEquals(pokemon.getHp(),202);
 		assertEquals(pokemon.getDust(),5000);;
 		assertEquals(pokemon.getCandy(),4);
+		assertEquals(pokemon.getIv(),100,0);
 		
 		assertEquals(pokemonCreated.getIndex(),pokemon.getIndex());
 		assertEquals(pokemonCreated.getCp(), pokemon.getCp());
@@ -39,6 +41,7 @@ public class IPokemonFactoryTest {
 		assertEquals(pokemonCreated.getDust(), pokemon.getDust());
 		assertEquals(pokemonCreated.getCandy(), pokemon.getCandy());
 		
+		assertNull(this.pokemonfactory.createPokemon(-1, 0, 0, 0, 0));
 	}
 	
 }

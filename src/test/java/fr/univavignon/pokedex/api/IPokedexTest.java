@@ -71,6 +71,15 @@ public class IPokedexTest {
 			e.getMessage();
 		}
 		
+		try {
+			if(pokemon != null) {
+				assertNull(this.pokedex.getPokemon(-1));				
+			}
+		} catch (PokedexException e) {
+			e.printStackTrace();
+			e.getMessage();
+		}
+		
 	}
 	
 }
