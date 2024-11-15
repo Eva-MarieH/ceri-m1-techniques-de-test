@@ -29,7 +29,7 @@ public class IPokedexTest {
 	}
 	
 	@Test
-	public void testAddPokemon() {
+	public void testPokedex() {
 		Pokemon pokemon = new Pokemon(0, "Bulbizarre", 126, 126, 90, 613, 64, 4000, 4, 56);
 		
 		this.pokedex.addPokemon(pokemon);
@@ -40,6 +40,22 @@ public class IPokedexTest {
 				assertEquals(this.pokedex.getPokemonMetadata(0).getAttack(),pokemon.getAttack());
 				assertEquals(this.pokedex.getPokemonMetadata(0).getDefense(),pokemon.getDefense());
 				assertEquals(this.pokedex.getPokemonMetadata(0).getStamina(),pokemon.getStamina());
+				
+				assertEquals(this.pokedex.getPokemon(0),pokemon);
+				assertEquals(this.pokedex.getPokemons().get(0),pokemon);
+				assertEquals(this.pokedex.getPokemons().size(),1);
+				
+				Pokemon pokemonCreated = this.pokedex.createPokemon(pokemon.getIndex(), pokemon.getCp(), pokemon.getHp(), pokemon.getDust(), pokemon.getCandy());
+				
+				assertEquals(pokemonCreated.getIndex(),pokemon.getIndex());
+				assertEquals(pokemonCreated.getName(),pokemon.getName());
+				assertEquals(pokemonCreated.getAttack(),pokemon.getAttack());
+				assertEquals(pokemonCreated.getDefense(),pokemon.getDefense());
+				assertEquals(pokemonCreated.getStamina(),pokemon.getStamina());
+				assertEquals(pokemonCreated.getCp(),pokemon.getCp());
+				assertEquals(pokemonCreated.getHp(),pokemon.getHp());
+				assertEquals(pokemonCreated.getDust(),pokemon.getDust());
+				assertEquals(pokemonCreated.getCandy(),pokemon.getCandy());
 			}
 		} catch (PokedexException e) {
 			e.printStackTrace();
