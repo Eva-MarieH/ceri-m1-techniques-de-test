@@ -24,8 +24,8 @@ public class IPokemonMetadataProviderTest {
 	
 	@Test
 	public void testPokemonMetadataProvider() {
-		Pokemon pokemon = new Pokemon(133, "Aquali", 186, 168, 90, 52, 56, 58, 40, 59);
-		PokemonMetadata metadata = new PokemonMetadata(133, "Aquali", 186, 168, 90);
+		Pokemon pokemon = new Pokemon(133, "Aquali", 186, 168, 260, 2729, 202, 5000, 4, 100);
+		PokemonMetadata metadata = new PokemonMetadata(133, "Aquali", 186, 168, 260);
 		try {
 			when(this.ipokemonmetadataprovider.getPokemonMetadata(133)).thenReturn(metadata);
 		} catch (PokedexException e) {
@@ -37,7 +37,7 @@ public class IPokemonMetadataProviderTest {
 		assertEquals(metadata.getName(),"Aquali");
 		assertEquals(metadata.getAttack(),186);
 		assertEquals(metadata.getDefense(),168);
-		assertEquals(metadata.getStamina(),90);
+		assertEquals(metadata.getStamina(),260);
 	}
 	
 }

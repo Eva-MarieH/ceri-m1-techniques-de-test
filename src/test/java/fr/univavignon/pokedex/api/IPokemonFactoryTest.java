@@ -23,16 +23,15 @@ public class IPokemonFactoryTest {
 	
 	@Test
 	public void testPokemonFactory() {
-		Pokemon pokemon = new Pokemon(133, "Aquali", 186, 168, 90, 52, 56, 58, 40, 59);
+		Pokemon pokemon = new Pokemon(133, "Aquali", 186, 168, 90, 2729, 202, 5000, 4, 100);
 		
-		when(this.ipokemonfactory.createPokemon(133, 52, 56, 58, 40)).thenReturn(pokemon);
+		when(this.ipokemonfactory.createPokemon(133, 2729, 202, 5000, 4)).thenReturn(pokemon);
 		
 		assertEquals(pokemon.getIndex(),133);
-		assertEquals(pokemon.getCp(),52);
-		assertEquals(pokemon.getHp(),56);
-		assertEquals(pokemon.getDust(),58);
-		assertEquals(pokemon.getCandy(),40);
-		assertEquals(pokemon.getCandy(),59);
+		assertEquals(pokemon.getCp(),2729);
+		assertEquals(pokemon.getHp(),202);
+		assertEquals(pokemon.getDust(),5000);;
+		assertEquals(pokemon.getCandy(),4);
 		
 		
 	}

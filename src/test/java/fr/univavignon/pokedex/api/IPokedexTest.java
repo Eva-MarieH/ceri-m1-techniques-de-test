@@ -43,7 +43,7 @@ public class IPokedexTest {
 		
 		try {
 			if(pokemon != null) {
-				Mockito.when(this.ipokedex.getPokemonMetadata(-1));				
+				Mockito.when(this.ipokedex.getPokemonMetadata(-1)).thenReturn(pokemon);				
 			}
 		} catch (PokedexException e) {
 			e.printStackTrace();
