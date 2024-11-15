@@ -38,6 +38,16 @@ public class IPokedexTest {
 			}
 		} catch (PokedexException e) {
 			e.printStackTrace();
+			e.getMessage();
+		}
+		
+		try {
+			if(pokemon != null) {
+				Mockito.when(this.ipokedex.getPokemonMetadata(-1));				
+			}
+		} catch (PokedexException e) {
+			e.printStackTrace();
+			e.getMessage();
 		}
 		
 	}
