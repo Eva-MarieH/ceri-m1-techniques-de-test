@@ -8,8 +8,8 @@ public class PokemonMetadataProvider implements IPokemonMetadataProvider {
 	
 	public PokemonMetadataProvider() {
 		bdd = new ArrayList<PokemonMetadata>();
-		bdd.add(new PokemonMetadata(133, "Aquali", 186, 168, 90));
-		bdd.add(new PokemonMetadata(0, "Bulbizarre", 126, 126, 260));
+		bdd.add(new PokemonMetadata(133, "Aquali", 186, 168, 260));
+		bdd.add(new PokemonMetadata(0, "Bulbizarre", 126, 126, 90));
 	}
 	
 	@Override

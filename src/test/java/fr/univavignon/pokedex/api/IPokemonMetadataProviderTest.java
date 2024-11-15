@@ -9,11 +9,11 @@ import org.junit.Test;
 import org.mockito.Mockito;
 
 public class IPokemonMetadataProviderTest {
-	private IPokemonMetadataProvider ipokemonmetadataprovider;
+	private PokemonMetadataProvider pokemonmetadataprovider;
 	
 	@Before
 	public void initTestEnvironment() {
-		this.ipokemonmetadataprovider = Mockito.mock(IPokemonMetadataProvider.class);
+		this.pokemonmetadataprovider = new PokemonMetadataProvider();
 	}
 	
 	@After
@@ -27,7 +27,14 @@ public class IPokemonMetadataProviderTest {
 		Pokemon pokemon = new Pokemon(133, "Aquali", 186, 168, 260, 2729, 202, 5000, 4, 100);
 		PokemonMetadata metadata = new PokemonMetadata(133, "Aquali", 186, 168, 260);
 		try {
-			when(this.ipokemonmetadataprovider.getPokemonMetadata(133)).thenReturn(metadata);
+			PokemonMetadata metadataCreated = this.pokemonmetadataprovider.getPokemonMetadata(133);
+			
+			assertEquals(metadataCreated.getIndex(),metadata.getIndex());
+			assertEquals(metadataCreated.getName(),metadata.getName());
+			assertEquals(metadataCreated.getAttack(),metadata.getAttack());
+			assertEquals(metadataCreated.getDefense(),metadata.getDefense());
+			assertEquals(metadataCreated.getStamina(),metadata.getStamina());
+			
 		} catch (PokedexException e) {
 			e.printStackTrace();
 			e.getMessage();

@@ -11,15 +11,15 @@ import org.junit.Test;
 import org.mockito.Mockito;
 
 public class IPokemonTrainerFactoryTest {
-	private IPokemonTrainerFactory ipokemontrainerfactory;
-	private IPokedexFactory ipokedexfactory;
-	private IPokedex ipokedex;
+	private PokemonTrainerFactory pokemontrainerfactory;
+	private PokedexFactory pokedexfactory;
+	private Pokedex pokedex;
 	
 	@Before
 	public void initTestEnvironment() {
-		this.ipokemontrainerfactory = mock(IPokemonTrainerFactory.class);
-		this.ipokedexfactory = mock(IPokedexFactory.class);
-		this.ipokedex = mock(IPokedex.class);
+		this.pokemontrainerfactory = new PokemonTrainerFactory();
+		this.pokedexfactory = new PokedexFactory();
+		this.pokedex = (Pokedex) this.pokedexfactory.createPokedex(new PokemonMetadataProvider(), new PokemonFactory());
 	}
 	
 	@After
@@ -29,14 +29,19 @@ public class IPokemonTrainerFactoryTest {
 	
 	@Test
 	public void testCreateTrainer() {
-		PokemonTrainer pokemonTrainer = new PokemonTrainer("Trainer1", Team.MYSTIC, ipokedex);
+		PokemonTrainer pokemonTrainer = new PokemonTrainer("Trainer1", Team.MYSTIC, pokedex);
 		
 		assertNotNull(pokemonTrainer);
 		assertEquals(pokemonTrainer.getName(),"Trainer1");
 		assertEquals(pokemonTrainer.getTeam(),Team.MYSTIC);
-		assertEquals(pokemonTrainer.getPokedex(),ipokedex);
+		assertEquals(pokemonTrainer.getPokedex(),pokedex);
 		
-		when(this.ipokemontrainerfactory.createTrainer("Trainer1", Team.MYSTIC, ipokedexfactory)).thenReturn(pokemonTrainer);	
+		PokemonTrainer trainerCreated = this.pokemontrainerfactory.createTrainer("Trainer1", Team.MYSTIC, pokedexfactory);
+		
+		assertEquals(trainerCreated.getName(),pokemonTrainer.getName());
+		assertEquals(trainerCreated.getTeam(),pokemonTrainer.getTeam());
+		//assertEquals(trainerCreated.getPokedex(),pokemonTrainer.getPokedex());
+		
 	}
 	
 }

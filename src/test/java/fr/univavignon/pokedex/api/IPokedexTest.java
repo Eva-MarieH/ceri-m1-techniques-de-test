@@ -1,6 +1,7 @@
 package fr.univavignon.pokedex.api;
 
-import static org.mockito.Mockito.mockitoSession;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 import org.junit.After;
 import org.junit.Before;
@@ -9,11 +10,11 @@ import org.mockito.Mockito;
 
 
 public class IPokedexTest {
-	private IPokedex ipokedex;
+	private Pokedex pokedex;
 	
 	@Before
 	public void initTestEnvironment() {
-		this.ipokedex = Mockito.mock(IPokedex.class);
+		this.pokedex = new Pokedex(new PokemonMetadataProvider(), new PokemonFactory());
 	}
 	
 	@After
@@ -23,7 +24,7 @@ public class IPokedexTest {
 	
 	@Test
 	public void testSize() {
-		int size = this.ipokedex.size();
+		int size = this.pokedex.size();
 		assert(size >= 0 && size <= 151);
 	}
 	
@@ -31,10 +32,14 @@ public class IPokedexTest {
 	public void testAddPokemon() {
 		Pokemon pokemon = new Pokemon(0, "Bulbizarre", 126, 126, 90, 613, 64, 4000, 4, 56);
 		
-		this.ipokedex.addPokemon(pokemon);
+		this.pokedex.addPokemon(pokemon);
 		try {
 			if(pokemon != null) {
-				Mockito.when(this.ipokedex.getPokemonMetadata(0)).thenReturn(pokemon);				
+				assertEquals(this.pokedex.getPokemonMetadata(0).getIndex(),pokemon.getIndex());
+				assertEquals(this.pokedex.getPokemonMetadata(0).getName(),pokemon.getName());
+				assertEquals(this.pokedex.getPokemonMetadata(0).getAttack(),pokemon.getAttack());
+				assertEquals(this.pokedex.getPokemonMetadata(0).getDefense(),pokemon.getDefense());
+				assertEquals(this.pokedex.getPokemonMetadata(0).getStamina(),pokemon.getStamina());
 			}
 		} catch (PokedexException e) {
 			e.printStackTrace();
@@ -43,7 +48,7 @@ public class IPokedexTest {
 		
 		try {
 			if(pokemon != null) {
-				Mockito.when(this.ipokedex.getPokemonMetadata(-1)).thenReturn(pokemon);				
+				assertNull(this.pokedex.getPokemonMetadata(-1));				
 			}
 		} catch (PokedexException e) {
 			e.printStackTrace();

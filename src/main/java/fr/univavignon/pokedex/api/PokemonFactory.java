@@ -7,7 +7,7 @@ public class PokemonFactory implements IPokemonFactory {
 		PokemonMetadataProvider metadataProvider = new PokemonMetadataProvider();
 		try {
 			PokemonMetadata metadata = metadataProvider.getPokemonMetadata(index);
-			return new Pokemon(candy, metadata.getName(), metadata.getAttack(), metadata.getDefense(), metadata.getStamina(), cp, hp, dust, candy, 100);
+			return new Pokemon(index, metadata.getName(), metadata.getAttack(), metadata.getDefense(), metadata.getStamina(), cp, hp, dust, candy, 100);
 		} catch (PokedexException e) {
 			e.printStackTrace();
 		}
