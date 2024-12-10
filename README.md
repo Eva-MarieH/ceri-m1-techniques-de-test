@@ -11,3 +11,8 @@ Prénom : Eva-Marie
 - TP 2 : 9a067344428f3a7759cb96423720ce1256af0566
 
 J'ai mis les tags à partir du TP3.
+
+## Badges
+
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/Eva-MarieH/ceri-m1-techniques-de-test/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/Eva-MarieH/ceri-m1-techniques-de-test/tree/master)
+[![codecov](https://codecov.io/gh/Eva-MarieH/ceri-m1-techniques-de-test/graph/badge.svg?token=YPRM5NS46W)](https://codecov.io/gh/Eva-MarieH/ceri-m1-techniques-de-test)
