@@ -58,6 +58,27 @@
                 </execution>
             </executions>
         </plugin>
+        <plugin>
+		   <groupId>org.apache.maven.plugins</groupId>
+		   <artifactId>maven-checkstyle-plugin</artifactId>
+		   <version>3.6.0</version>
+		   <configuration>
+		     <configLocation>src/main/resources/checkstyle.xml</configLocation>
+		     <encoding>UTF-8</encoding>
+		     <consoleOutput>true</consoleOutput>
+		     <failOnViolation>false</failOnViolation>
+		     <linkXRef>false</linkXRef>
+		   </configuration>
+		   <executions>
+		     <execution>
+		       <id>validate</id>
+		       <phase>validate</phase>
+		       <goals>
+		         <goal>check</goal>
+		       </goals>
+		     </execution>
+		   </executions>
+		 </plugin>
 	   </plugins>
   </build>
 
@@ -83,6 +104,11 @@
 		<groupId>org.apache.commons</groupId>
 		<artifactId>commons-collections4</artifactId>
 		<version>4.0</version>
+	</dependency>
+	<dependency>
+	    <groupId>com.puppycrawl.tools</groupId>
+	    <artifactId>checkstyle</artifactId>
+	    <version>10.20.2</version>
 	</dependency>
   </dependencies>  
   <repositories>
